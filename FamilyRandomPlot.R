@@ -1,7 +1,7 @@
 #####Fam and Rand vQTL FINAL#####
 library("qtl")
 library("vqtl")
-sample <-read.cross(file ="familyrandomsample.csv")
+sample <-read.cross(file ="./FamilyRandom/familyrandomsample.csv")
 sample <- drop.nullmarkers(sample)
 #scan with variance
 sample <- calc.genoprob(sample)
@@ -23,7 +23,6 @@ outv <- scanonevar(cross = sample,
                    return.covar.effects = TRUE)
 
 outv$result %>% glimpse()
-
 # I deleted a bunch of stuff here -- I think this you just want outv$result
 # maybe the previous user didn't know about this return.covar.effects argument to scanonevar
 # maybe it's not well documented!
